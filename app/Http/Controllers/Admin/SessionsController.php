@@ -27,6 +27,6 @@ class SessionsController extends Controller
 
     public function destroy(){
         Auth::logout();
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }
