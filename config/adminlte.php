@@ -255,7 +255,7 @@ return [
         ],
         [
             'text'        => 'administradores',
-            'url'         => 'auth/index',
+            'url'         => 'index',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',

@@ -1,36 +1,14 @@
-@extends('layouts.app')
-@section ('title','Login')
-@section('content')
-
-
 <div class="card">
     <div class="card-header">
-        <h5><span class="text-center fa fa-home"></span> @yield('title')</h5>
-        <h1>{{ $modo }} Administradores</h1>
+        <h5><span class="text-center fa fa-home"></span> registrar</h5>
     </div>
     <div class="card-body">
-
-     
-
-        @if(count($errors)>0)
-
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-
-            </ul>
-
-        </div>
-        @endif
-
 
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de usuario') }}</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ isset($user->name)?$user->name:old('name') }}" autocomplete="name" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  autocomplete="name" autofocus>
 
                 @error('name')
                 <span class="invalid-feedback" role="alert">
@@ -45,7 +23,7 @@
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
             <div class="col-md-6">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ isset($user->email)?$user->email:old('email') }}" autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  autocomplete="email">
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -87,18 +65,10 @@
 
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-                <input class="btn btn-success" type="submit" value="{{ $modo }}">
-                <a class="btn btn-primary" href="{{ url('user/') }}">Regresar</a>
+                <input class="btn btn-success btn-sm" type="submit" value="Registrar">
+                <a class="btn btn-primary btn-sm" href="{{ url('user/') }}">Regresar</a>
             </div>
 
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-@endsection

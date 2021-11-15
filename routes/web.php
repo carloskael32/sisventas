@@ -33,8 +33,8 @@ Route::post('/login', [SessionsController::class, 'store'])->name('login.store')
 Route::post('/logout', [SessionsController::class, 'destroy'])->name('login.destroy')->middleware('auth');
 
 //registro
+Route::get('/index',[RegisterController::class,'index'])->name('admin.index')->middleware('auth');
 Route::get('/register', [RegisterController::class, 'create'])->name('register.index')->middleware('auth');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store')->middleware('auth');
-Route::get('/index',[RegisterController::class,'index'])->name('admin.index')->middleware('auth');
-
+Route::post('/register/{id}', [RegisterController::class, 'destroy'])->name('register.destroy');
 //////

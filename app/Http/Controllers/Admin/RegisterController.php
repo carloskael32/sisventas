@@ -42,6 +42,11 @@ class RegisterController extends Controller
             'password' => Hash::make(request('password')),
         ]);
 
-        return redirect()->to('/');
+        return redirect()->to('index');
+    }
+    public function destroy($id)
+    {
+        User::destroy($id);
+        return redirect('index')->with('mensaje', 'Registro Borrado..');
     }
 }
